@@ -195,23 +195,23 @@
                             </tr>
                         </thead> -->
                         <tbody>
-                            <tr>
+                            <tr id="LADr">
                                 <td>Left Axis Deviation</td>
                                 <td id="LAD"></td>
                             </tr>
-                            <tr>
+                            <tr id="TAbr">
                                 <td>T Wave Abnormal</td>
                                 <td id="TAb"></td>
                             </tr>
-                            <tr>
+                            <tr id="AFr">
                                 <td>Atrial Fibrillation</td>
                                 <td id="AF"></td>
                             </tr>
-                            <tr>
+                            <tr id="STachr">
                                 <td>Sinus Tachycardia</td>
                                 <td id="STach"></td>
                             </tr>
-                            <tr>
+                            <tr id="IAVBr">
                                 <td>1st Degree Av Block</td>
                                 <td id="IAVB"></td>
                             </tr>
@@ -406,33 +406,33 @@
                 $('#IAVB').text(`${(result[4]*100).toFixed(2)}%`);
 
                 if(result[0]>0.5){
-                    $('#LAD').addClass("table-danger")
+                    $('#LADr').addClass("table-danger")
                 }else{
-                    $('#LAD').addClass("table-success")
+                    $('#LADr').addClass("table-success")
                 }
 
                 if(result[1]>0.5){
-                    $('#TAb').addClass("table-danger")
+                    $('#TAbr').addClass("table-danger")
                 }else{
-                    $('#TAb').addClass("table-success")
+                    $('#TAbr').addClass("table-success")
                 }
 
                 if(result[2]>0.5){
-                    $('#AF').addClass("table-danger")
+                    $('#AFr').addClass("table-danger")
                 }else{
-                    $('#AF').addClass("table-success")
+                    $('#AFr').addClass("table-success")
                 }
 
                 if(result[3]>0.5){
-                    $('#STach').addClass("table-danger")
+                    $('#STachr').addClass("table-danger")
                 }else{
-                    $('#STach').addClass("table-success")
+                    $('#STachr').addClass("table-success")
                 }
 
                 if(result[4]>0.5){
-                    $('#IAVB').addClass("table-danger")
+                    $('#IAVBr').addClass("table-danger")
                 }else{
-                    $('#IAVB').addClass("table-success")
+                    $('#IAVBr').addClass("table-success")
                 }
             })
             .catch(error => console.log('error', error));
