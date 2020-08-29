@@ -28,7 +28,7 @@
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
 <!--Body-->
@@ -45,7 +45,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav mr-auto">
-                <button onclick="renderHome();" style="display:None" class="btn btn-dark screen_PlottingArea" >
+                <button onclick="renderHome();" style="display:None" class="btn btn-dark screen_PlottingArea">
                     <i class="fa fa-home"></i>
                 </button>
                 <a class="navbar-brand" href="#">
@@ -79,29 +79,33 @@
                     <center>AI Based Remote Cardiology Solution</center>
                 </h4>
                 <hr class="my-4" style="height: 1px; border-color:white; background-color:white">
-                
+
                 <p>
                     <center>
-                    Diagno utilizes the power of deep learning to detect 5 different cardiac conditions with over 90% accuracy using just a 10-second recording of 12-Lead ECG.
-                    </center>    
-                    
-                    
+                        Diagno utilizes the power of deep learning to detect 5 different cardiac conditions with over
+                        90% accuracy using just a 10-second recording of 12-Lead ECG.
+                    </center>
+
+
                 </p>
                 <center>
-                <iframe title="vimeo-player" src="https://player.vimeo.com/video/451631301" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                    <iframe title="vimeo-player" src="https://player.vimeo.com/video/451631301" width="640" height="360"
+                        frameborder="0" allowfullscreen></iframe>
                 </center>
-                
-                
+
+
                 <hr class="my-4" style="height: 1px; border-color:white; background-color:white">
-                
-                
+
+
 
                 <p class="">
-                    Upload Recording  
-                    [<a href="https://github.com/shehanmunasinghe/diagno/blob/master/Test%20Instructions.md" >Help/ Testing Instructions </a>]
-                    [<a href="https://github.com/shehanmunasinghe/diagno/blob/master/Sample%20Recordings" >Download Sample Recordings </a>]
-                       
-                    
+                    Upload Recording
+                    [<a href="https://github.com/shehanmunasinghe/diagno/blob/master/Test%20Instructions.md">Help/
+                        Testing Instructions </a>]
+                    [<a href="https://github.com/shehanmunasinghe/diagno/blob/master/Sample%20Recordings">Download
+                        Sample Recordings </a>]
+
+
                 </p>
                 <div class="input-group">
                     <div class="custom-file">
@@ -110,12 +114,14 @@
                         <label class="custom-file-label" for="inputfile">Choose file</label>
                     </div>
                 </div>
-                
+
                 <hr class="my-4" style="height: 1px; border-color:white; background-color:white">
-                 
+
                 <div class="d-flex justify-content-around">
-                <a class="btn btn-primary btn" href="https://github.com/shehanmunasinghe/diagno" role="button">View on GitHub</a>
-                <a class="btn btn-success btn" href="https://devpost.com/software/diagno" role="button">View on Devpost</a>
+                    <a class="btn btn-primary btn" href="https://github.com/shehanmunasinghe/diagno" role="button">View
+                        on GitHub</a>
+                    <a class="btn btn-success btn" href="https://devpost.com/software/diagno" role="button">View on
+                        Devpost</a>
                 </div>
 
 
@@ -215,30 +221,43 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-sm">
+                    <div class="before-results">
+                        <div class="loader">
+
+                        </div>
+                    </div>
+                    <div class="error" style="display:None">
+                        <p>Error Occured</p>
+                    </div>
+                    <table class="table table-sm after-results" style="display:None">
                         <tbody>
                             <tr id="LADr">
-                                <td><a href="https://en.wikipedia.org/wiki/Left_axis_deviation#:~:text=In%20electrocardiography%2C%20left%20axis%20deviation,in%20leads%20aVF%20and%20II." target="_blank">Left Axis Deviation</a></td>
+                                <td><a href="https://en.wikipedia.org/wiki/Left_axis_deviation#:~:text=In%20electrocardiography%2C%20left%20axis%20deviation,in%20leads%20aVF%20and%20II."
+                                        target="_blank">Left Axis Deviation</a></td>
                                 <td id="LAD"></td>
                                 <td id="LADp"></td>
                             </tr>
                             <tr id="TAbr">
-                                <td><a href="https://en.wikipedia.org/wiki/T_wave#Abnormalities" target="_blank">T Wave Abnormal</a></td>
+                                <td><a href="https://en.wikipedia.org/wiki/T_wave#Abnormalities" target="_blank">T Wave
+                                        Abnormal</a></td>
                                 <td id="TAb"></td>
                                 <td id="TAbp"></td>
                             </tr>
                             <tr id="AFr">
-                                <td><a href="https://www.mayoclinic.org/diseases-conditions/atrial-fibrillation/symptoms-causes/syc-20350624#:~:text=faster%20than%20normal.-,Atrial%20fibrillation%20is%20an%20irregular%20and%20often%20rapid%20heart%20rate,to%20175%20beats%20a%20minute." target="_blank">Atrial Fibrillation</a></td>
+                                <td><a href="https://www.mayoclinic.org/diseases-conditions/atrial-fibrillation/symptoms-causes/syc-20350624#:~:text=faster%20than%20normal.-,Atrial%20fibrillation%20is%20an%20irregular%20and%20often%20rapid%20heart%20rate,to%20175%20beats%20a%20minute."
+                                        target="_blank">Atrial Fibrillation</a></td>
                                 <td id="AF"></td>
                                 <td id="AFp"></td>
                             </tr>
                             <tr id="STachr">
-                                <td><a href="https://en.wikipedia.org/wiki/Sinus_tachycardia#:~:text=Sinus%20tachycardia%20(also%20colloquially%20known,beats%2Fmin%20(bpm)." target="_blank">Sinus Tachycardia</a></td>
+                                <td><a href="https://en.wikipedia.org/wiki/Sinus_tachycardia#:~:text=Sinus%20tachycardia%20(also%20colloquially%20known,beats%2Fmin%20(bpm)."
+                                        target="_blank">Sinus Tachycardia</a></td>
                                 <td id="STach"></td>
                                 <td id="STachp"></td>
                             </tr>
                             <tr id="IAVBr">
-                                <td><a href="https://www.ncbi.nlm.nih.gov/books/NBK448164/#:~:text=First%2Ddegree%20atrioventricular%20(AV),asymptomatic%20and%20without%20significant%20complications." target="_blank">1st Degree Av Block</a></td>
+                                <td><a href="https://www.ncbi.nlm.nih.gov/books/NBK448164/#:~:text=First%2Ddegree%20atrioventricular%20(AV),asymptomatic%20and%20without%20significant%20complications."
+                                        target="_blank">1st Degree Av Block</a></td>
                                 <td id="IAVB"></td>
                                 <td id="IAVBp"></td>
                             </tr>
@@ -399,7 +418,7 @@
     function analyze() {
         $('#resultDisplay').modal('show')
         var myHeaders = new Headers();
-        
+
         myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
         var urlencoded = new URLSearchParams();
@@ -416,64 +435,71 @@
             .then(response => response.json())
             .then((result) => {
                 console.log(result);
-                // $('#dataHere').text(result[0]);
-                $('#LAD').text(`${(result[0]*100).toFixed(2)}%`);
-                $('#TAb').text(`${(result[1]*100).toFixed(2)}%`);
-                $('#AF').text(`${(result[2]*100).toFixed(2)}%`);
-                $('#STach').text(`${(result[3]*100).toFixed(2)}%`);
-                $('#IAVB').text(`${(result[4]*100).toFixed(2)}%`);
 
-                if(result[0]>0.5){
+                $(".after-results").show();
+                $(".before-results").hide();
+                // $('#dataHere').text(result[0]);
+                $('#LAD').text(`${(result[0] * 100).toFixed(2)}%`);
+                $('#TAb').text(`${(result[1] * 100).toFixed(2)}%`);
+                $('#AF').text(`${(result[2] * 100).toFixed(2)}%`);
+                $('#STach').text(`${(result[3] * 100).toFixed(2)}%`);
+                $('#IAVB').text(`${(result[4] * 100).toFixed(2)}%`);
+
+                if (result[0] > 0.5) {
                     $('#LADr').addClass("table-danger");
                     $('#LADp').text("HIGH RISK");
                     $('#LADp').addClass("danger-text");
-                }else{
+                } else {
                     $('#LADr').addClass("table-success");
                     $('#LADp').text("LOW RISK");
                     $('#LADp').addClass("success-text");
                 }
 
-                if(result[1]>0.5){
+                if (result[1] > 0.5) {
                     $('#TAbr').addClass("table-danger");
                     $('#TAbp').text("HIGH RISK");
                     $('#TAbp').addClass("danger-text");
-                }else{
+                } else {
                     $('#TAbr').addClass("table-success");
                     $('#TAbp').text("LOW RISK");
                     $('#TAbp').addClass("success-text");
                 }
 
-                if(result[2]>0.5){
+                if (result[2] > 0.5) {
                     $('#AFr').addClass("table-danger");
                     $('#AFp').text("HIGH RISK");
                     $('#AFp').addClass("danger-text");
-                }else{
+                } else {
                     $('#AFr').addClass("table-success");
                     $('#AFp').text("LOW RISK");
                     $('#AFp').addClass("success-text");
                 }
 
-                if(result[3]>0.5){
+                if (result[3] > 0.5) {
                     $('#STachr').addClass("table-danger");
                     $('#STachp').text("HIGH RISK");
                     $('#STachp').addClass("danger-text");
-                }else{
+                } else {
                     $('#STachr').addClass("table-success");
                     $('#STachp').text("LOW RISK");
                     $('#STachp').addClass("success-text");
                 }
 
-                if(result[4]>0.5){
+                if (result[4] > 0.5) {
                     $('#IAVBr').addClass("table-danger");
                     $('#IAVBp').text("HIGH RISK");
                     $('#IAVBp').addClass("danger-text");
-                }else{
+                } else {
                     $('#IAVBr').addClass("table-success");
                     $('#IAVBp').text("LOW RISK");
                     $('#IAVBp').addClass("success-text");
                 }
             })
-            .catch(error => console.log('error', error));
+            .catch(error => {
+                console.log('error', error)
+                $(".error").show();
+                $(".before-results").hide();
+            });
 
 
     }
@@ -622,13 +648,41 @@
         stroke: Fuchsia
     }
 
-    .danger-text{
+    .danger-text {
         color: red;
     }
 
-    .success-text{
+    .success-text {
         color: green;
     }
+
+    .loader {
+  position: relative;
+  text-align: center;
+  margin: 15px auto 35px auto;
+  z-index: 9999;
+  display: block;
+  width: 80px;
+  height: 80px;
+  border: 10px solid rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  border-top-color: #000;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
 </style>
 
 </html>
