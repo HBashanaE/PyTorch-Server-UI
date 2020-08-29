@@ -29,6 +29,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Custom JS-->
+    <script src="res/index.js"></script> 
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="res/index.css">
 </head>
 
 <!--Body-->
@@ -59,7 +65,7 @@
             </ul>
 
             <ul class="navbar-nav">
-                <button onclick="openFullscreen();" style=" " class="btn btn-dark">
+                <button onclick="openFullscreen();" class="btn btn-dark">
                     <span class="material-icons">fullscreen</span>
                 </button>
             </ul>
@@ -300,11 +306,7 @@
 
                 var j_arr = JSON.parse(fr.result);
                 _arr = j_arr;
-                // console.log(j_arr);
                 formData = fr;
-                // console.log(formData);
-                // console.log(j_arr);
-                // localStorage.setItem('arr', j_arr);
 
                 var myChart_1 = $('#lineChart_0').epoch({
                     type: 'line',
@@ -434,11 +436,10 @@
         fetch("https://www.diagno.ml:8443/predictions/torch_model", requestOptions)
             .then(response => response.json())
             .then((result) => {
-                console.log(result);
 
                 $(".after-results").show();
                 $(".before-results").hide();
-                // $('#dataHere').text(result[0]);
+                
                 $('#LAD').text(`${(result[0] * 100).toFixed(2)}%`);
                 $('#TAb').text(`${(result[1] * 100).toFixed(2)}%`);
                 $('#AF').text(`${(result[2] * 100).toFixed(2)}%`);
@@ -496,32 +497,13 @@
                 }
             })
             .catch(error => {
-                console.log('error', error)
+                // console.log('error', error)
                 $(".error").show();
                 $(".before-results").hide();
             });
-
-
     }
 
 </script>
-
-<!--Render Pages-->
-<script>
-    function renderHome() {
-        $(".screen_PlottingArea").hide();
-        $(".screen_WelcomeScreen").show();
-    }
-
-    function renderRealTimePlotPage() {
-        $(".screen_PlottingArea").show();
-        $(".screen_WelcomeScreen").hide();
-    }
-
-</script>
-
-
-
 
 <!--WebSocket-->
 <script>
@@ -554,135 +536,5 @@
 </script>
 
 
-
-
-
-
-<!--Fullscreen-->
-<script>
-    /* Get the documentElement (<html>) to display the page in fullscreen */
-    var elem = document.documentElement;
-
-    /* View in fullscreen */
-    function openFullscreen() {
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.mozRequestFullScreen) { /* Firefox */
-            elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE/Edge */
-            elem.msRequestFullscreen();
-        }
-    }
-
-    /* Close fullscreen */
-    function closeFullscreen() {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) { /* Firefox */
-            document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
-            document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) { /* IE/Edge */
-            document.msExitFullscreen();
-        }
-    }
-</script>
-
-
-
-
-
-
-
-<!--Style    -->
-<style>
-    body {
-        background-color: black;
-    }
-
-    #lineChart_1 .line {
-        stroke: green
-    }
-
-    #lineChart_2 .line {
-        stroke: crimson
-    }
-
-    #lineChart_3 .line {
-        stroke: DarkOrchid
-    }
-
-
-    #lineChart_4 .line {
-        stroke: blue
-    }
-
-    #lineChart_5 .line {
-        stroke: DarkOrange
-    }
-
-    #lineChart_6 .line {
-        stroke: ForestGreen
-    }
-
-    #lineChart_7 .line {
-        stroke: Chocolate
-    }
-
-
-    #lineChart_8 .line {
-        stroke: DarkKhaki
-    }
-
-    #lineChart_9 .line {
-        stroke: DarkSalmon
-    }
-
-    #lineChart_10 .line {
-        stroke: DarkViolet
-    }
-
-    #lineChart_11 .line {
-        stroke: Fuchsia
-    }
-
-    .danger-text {
-        color: red;
-    }
-
-    .success-text {
-        color: green;
-    }
-
-    .loader {
-  position: relative;
-  text-align: center;
-  margin: 15px auto 35px auto;
-  z-index: 9999;
-  display: block;
-  width: 80px;
-  height: 80px;
-  border: 10px solid rgba(0, 0, 0, .3);
-  border-radius: 50%;
-  border-top-color: #000;
-  animation: spin 1s ease-in-out infinite;
-  -webkit-animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-</style>
 
 </html>
