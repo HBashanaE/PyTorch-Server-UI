@@ -396,7 +396,7 @@
             redirect: 'follow'
         };
 
-        fetch("https://18.222.224.2:8443/predictions/torch_model", requestOptions)
+        fetch("https://www.diagno.ml:8443/predictions/torch_model", requestOptions)
             .then(response => response.json())
             .then((result) => {
                 console.log(result);
